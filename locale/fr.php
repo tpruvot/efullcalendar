@@ -20,4 +20,5 @@ return array(
 		'week'=>'Semaine',
 		'day'=>'Jour'
 	),
+	'firstDay'=>1,
 );
