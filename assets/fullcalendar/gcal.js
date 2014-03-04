@@ -1,7 +1,7 @@
 /*!
- * FullCalendar v1.6.4 Google Calendar Plugin
+ * FullCalendar v1.6.4-yearview Google Calendar Plugin
  * Docs & License: http://arshaw.com/fullcalendar/
- * (c) 2013 Adam Shaw
+ * (c) 2013 Adam Shaw - 2014 Tanguy Pruvot
  */
  
 (function($) {
