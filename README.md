@@ -1,22 +1,25 @@
-Arshaw's Full Calendar
-======================
+Year Calendar for Yii
+=====================
 
-Great JavaScript calendar as Yii extension.
+This is a Yii extension based on my forked project of Arshaw fullcalendar.
+
+This project adds a year view to the available views.
+
 
 Install:
 
-	Extract or clone the package in protected\extensions\efullcalendar
+	Extract or clone the package in protected\extensions\yearcalendar
 
 
 Example usage:
 
-	<?php $this->widget('ext.efullcalendar.EFullCalendar', array(
+	<?php $this->widget('ext.yearcalendar.YearCalendar', array(
 		'theme'=>'base',
 		'options'=>array(
 			'header'=>array(
 				'left'=>'prev,next',
 				'center'=>'title',
-				'right'=>'today'
+				'right'=>'year,month'
 			)
 		)));
     ?>

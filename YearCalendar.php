@@ -1,8 +1,8 @@
 <?php
 /**
- * Great JavaScript calendar as Yii extension.
+ * Fullcalendar-yearview JavaScript calendar as Yii extension.
  *
- * Copyright (c) 2013 Mike Kowalsky.
+ * Copyright (c) 2013-2014 Tanguy Pruvot.
  * 
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation files
@@ -30,7 +30,7 @@
  * prior written authorization.
  *
  */
-class EFullCalendar extends CWidget
+class YearCalendar extends CWidget
 {
 	/**
 	 * @var string Google's calendar URL.
@@ -156,7 +156,7 @@ class EFullCalendar extends CWidget
 			$this->options['events']=$this->googleCalendarUrl;
 		}
 
-		$js='$("#'.$this->id.'").fullCalendar('.CJavaScript::encode($this->options).');';
+		$js='jQuery("#'.$this->id.'").fullCalendar('.CJavaScript::encode($this->options).');';
 		$cs->registerScript(__CLASS__.'#'.$this->id, $js, CClientScript::POS_READY);
 	}
 
