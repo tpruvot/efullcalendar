@@ -1,15 +1,15 @@
 {
-	"name": "mikemix/efullcalendar",
+	"name": "tpruvot/yearcalendar",
 	"type": "library",
-	"description": "Arshaw's FullCalendar as Yii extension",
-	"keywords": ["yii","calendar"],
+	"description": "Yearview variant of FullCalendar as Yii extension",
+	"keywords": ["yii","calendar","year"],
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Mike Zukowsky",
-			"email": "support@phpcontext.com",
-			"homepage": "http://www.phpcontext.com",
-			"role": "Developer"
+			"name": "Tanguy Pruvot",
+			"email": "tpruvot@github",
+			"homepage": "http://github.com/tpruvot",
+			"role": "JS/PHP Developer"
 		}
 	]
 }
