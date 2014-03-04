@@ -61,7 +61,7 @@ class EFullCalendar extends CWidget
 	 * This property can also be set as false, which means the widget will not include any theme CSS file,
 	 * and it is your responsibility to explicitly include it somewhere else.
 	 */
-	public $cssFile='fullcalendar.css';
+	public $cssFile='jquery-ui.css';
 
 	/**
 	 * @var array FullCalendar's options.
@@ -94,6 +94,20 @@ class EFullCalendar extends CWidget
 
 		$this->registerFiles();
 
+		if (!empty($this->theme)) {
+
+			$cs = Yii::app()->getClientScript();
+			if ($this->themeUrl === null)
+				$this->themeUrl = $cs->getCoreScriptUrl() . '/jui/css';
+
+			if (is_string($this->cssFile))
+				$cs->registerCssFile($this->themeUrl . '/' . $this->theme . '/' . $this->cssFile);
+			elseif (is_array($this->cssFile)) {
+				foreach ($this->cssFile as $cssFile)
+					$cs->registerCssFile($this->themeUrl . '/' . $this->theme . '/' . $cssFile);
+			}
+		}
+
 		echo $this->showOutput();
 	}
 
@@ -119,22 +133,6 @@ class EFullCalendar extends CWidget
 		return dirname(__FILE__).'/locale/'.$this->lang.'.'.$this->ext;
 	}
 
-	public function init()
-	{
-		parent::init();
-
-		$cs = Yii::app()->getClientScript();
-		if ($this->themeUrl === null)
-			$this->themeUrl = $cs->getCoreScriptUrl() . '/jui/css';
-
-		if (is_string($this->cssFile))
-			$cs->registerCssFile($this->themeUrl . '/' . $this->theme . '/' . $this->cssFile);
-		elseif (is_array($this->cssFile)) {
-			foreach ($this->cssFile as $cssFile)
-				$cs->registerCssFile($this->themeUrl . '/' . $this->theme . '/' . $cssFile);
-		}
-	}
-
 	/**
 	 * Register assets.
 	 */
@@ -150,7 +148,7 @@ class EFullCalendar extends CWidget
 		$ext=defined('YII_DEBUG') && YII_DEBUG ? 'js' : 'min.js';
 		$cs->registerScriptFile($assets.'/fullcalendar/fullcalendar.'.$ext);
 
-		//$cs->registerCssFile($assets.'/fullcalendar/fullcalendar.css');
+		$cs->registerCssFile($assets.'/fullcalendar/fullcalendar.css');
 		$cs->registerCssFile($assets.'/fullcalendar/fullcalendar.print.css','print');
 
 		if ($this->googleCalendarUrl) {
