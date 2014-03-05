@@ -20,6 +20,9 @@ Example usage:
 				'left'=>'prev,next',
 				'center'=>'title',
 				'right'=>'year,month'
-			)
+			),
+			'theme'=>false,
+			'defaultView'=>'year',
+			'yearColumns'=>2,
 		)));
-    ?>
+	?>

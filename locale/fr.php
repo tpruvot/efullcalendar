@@ -16,6 +16,7 @@ return array(
 	),
 	'buttonText'=>array(
 		'today'=>'Ce jour',
+		'year'=>'Année',
 		'month'=>'Mois',
 		'week'=>'Semaine',
 		'day'=>'Jour'

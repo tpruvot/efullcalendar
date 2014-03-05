@@ -121,7 +121,7 @@ class YearCalendar extends CWidget
 		if (file_exists($langFile)) {
 			$this->options=CMap::mergeArray($this->options, include($langFile));
 		} else {
-			Yii::log(sprintf('EFullCalendar language file %s is missing', $langFile), CLogger::LEVEL_WARNING);
+			Yii::log(sprintf('YearCalendar language file %s is missing', $langFile), CLogger::LEVEL_WARNING);
 		}
 	}
 
@@ -156,7 +156,8 @@ class YearCalendar extends CWidget
 			$this->options['events']=$this->googleCalendarUrl;
 		}
 
-		$js='jQuery("#'.$this->id.'").fullCalendar('.CJavaScript::encode($this->options).');';
+		$js = 'jQuery("#'.$this->id.'").fullCalendar('.CJSON::encode($this->options).');';
+
 		$cs->registerScript(__CLASS__.'#'.$this->id, $js, CClientScript::POS_READY);
 	}
 
@@ -167,7 +168,7 @@ class YearCalendar extends CWidget
 	 */
 	protected function showOutput()
 	{
-		if (! isset($this->htmlOptions['id']))
+		if (!isset($this->htmlOptions['id']))
 			$this->htmlOptions['id']=$this->id;
 
 		return CHtml::tag('div', $this->htmlOptions,'');
